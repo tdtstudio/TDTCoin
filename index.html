@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TDTCoin - Nền tảng blockchain thế hệ mới cho tài chính phi tập trung (DeFi) và Web3. Khám phá TDTSwap, TDTVault và hơn thế nữa!">
+    <meta name="keywords" content="TDTCoin, blockchain, DeFi, Web3, TDTSwap, TDTVault, tài chính phi tập trung">
+    <meta name="author" content="TDTCoin Team">
+    <meta property="og:title" content="TDTCoin - Nền Tảng Tài Chính Tương Lai">
+    <meta property="og:description" content="Tham gia TDTCoin để trải nghiệm tài chính phi tập trung với tốc độ, bảo mật và quản trị cộng đồng.">
+    <meta property="og:image" content="/path/to/og-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <title>TDTCoin - Nền Tảng Tài Chính Tương Lai</title>
+    <!-- Load font Inter từ Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Chart.js for charting -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Load AOS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+        }
+        .text-glow-indigo {
+            text-shadow: 0 0 8px rgba(129, 140, 248, 0.4);
+        }
+        nav a, nav button {
+            transition: all 0.3s ease-in-out;
+        }
+        .social-icon {
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: #818cf8;
+        }
+        /* Hero Section Styling */
+        .hero {
+            background: url('images/hero-blockchain.jpg') no-repeat center center/cover;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(17, 24, 39, 0.7); /* Màu mờ đen */
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+        /* Parallax Effect */
+        @media (min-width: 768px) {
+            .hero {
+                background-attachment: fixed;
+            }
+        }
+        /* Animation on Scroll */
+        [data-aos] {
+            transition: all 0.5s ease-in-out;
+        }
+        /* Hover effect cho link đội ngũ và đối tác */
+        .team-link, .partner-link {
+            transition: color 0.3s ease-in-out;
+        }
+        .team-link:hover, .partner-link:hover {
+            color: #818cf8 !important;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Thanh Điều hướng (Navbar) -->
+    <nav class="bg-gray-800 shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#trang-chu" class="flex items-center">
+                        <img src="images/logo.png" alt="TDTCoin Logo" class="h-10 w-auto">
+                    </a>
+                </div>
+                <!-- Menu (Chỉ hiển thị trên Desktop) -->
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="#trang-chu" class="border-b-2 border-transparent text-gray-400 hover:border-indigo-400 hover:text-indigo-400 px-3 py-2 font-medium transition duration-150">Trang Chủ</a>
+                    <a href="#san-pham" class="border-b-2 border-transparent text-gray-400 hover:border-indigo-400 hover:text-indigo-400 px-3 py-2 font-medium transition duration-150">Sản Phẩm</a>
+                    <a href="#tokenomics" class="border-b-2 border-transparent text-gray-400 hover:border-indigo-400 hover:text-indigo-400 px-3 py-2 font-medium transition duration-150">Tokenomics</a>
+                    <a href="#doi-ngu" class="border-b-2 border-transparent text-gray-400 hover:border-indigo-400 hover:text-indigo-400 px-3 py-2 font-medium transition duration-150">Đội Ngũ</a>
+                    <a href="#doi-tac" class="border-b-2 border-transparent text-gray-400 hover:border-indigo-400 hover:text-indigo-400 px-3 py-2 font-medium transition duration-150">Đối Tác</a>
+                    <a href="#footer" class="border-b-2 border-transparent text-gray-400 hover:border-indigo-400 hover:text-indigo-400 px-3 py-2 font-medium transition duration-150">Liên Hệ</a>
+                </div>
+                <!-- Nút Hành động -->
+                <div class="hidden sm:ml-4 sm:flex sm:items-center">
+                    <button onclick="scrollToSection('lien-he')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300 shadow-md hover:shadow-lg">
+                        Bắt Đầu Ngay
+                    </button>
+                </div>
+                <!-- Menu Mobile -->
+                <div class="sm:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-200 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Nội dung Menu Mobile -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#trang-chu" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-indigo-400">Trang Chủ</a>
+                <a href="#san-pham" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-indigo-400">Sản Phẩm</a>
+                <a href="#tokenomics" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-indigo-400">Tokenomics</a>
+                <a href="#doi-ngu" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-indigo-400">Đội Ngũ</a>
+                <a href="#doi-tac" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-indigo-400">Đối Tác</a>
+                <a href="#footer" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-indigo-400">Liên Hệ</a>
+                <button onclick="scrollToSection('lien-he')" class="w-full mt-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">
+                    Bắt Đầu Ngay
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="trang-chu" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight text-center">
+                <span class="block">TDTCoin: <span class="text-indigo-400 text-glow-indigo">Tương Lai Của Tài Chính</span></span>
+                <span class="block mt-2 text-indigo-400 text-glow-indigo">Phi Tập Trung</span>
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl max-w-3xl mx-auto">
+                Một nền tảng blockchain thế hệ mới, an toàn và có khả năng mở rộng, được thiết kế cho các ứng dụng DeFi và Web3.
+            </p>
+            <div class="mt-8 space-x-4">
+                <a href="https://coinmarketcap.com/currencies/tdtcoin/" target="_blank" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-xl transition duration-300 transform hover:scale-105">
+                    Mua TDTCoin Ngay
+                </a>
+                <a href="#san-pham" class="inline-block bg-gray-800 border border-indigo-400 text-indigo-400 hover:bg-gray-700 font-bold py-3 px-8 rounded-full shadow-md transition duration-300">
+                    Tìm Hiểu Thêm
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <h2 class="text-3xl font-bold text-gray-200 mb-8" data-aos="fade-up" data-aos-delay="100">Tổng Quan Thị Trường TDTCoin (TDT)</h2>
+
+        <!-- Thẻ Dữ Liệu Giá Hiện Tại -->
+        <div class="bg-gray-800 rounded-xl shadow-2xl p-6 sm:p-8 mb-10 border border-gray-700" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex flex-wrap items-center justify-between">
+                <div>
+                    <p class="text-sm font-medium text-gray-400">Giá TDT hiện tại</p>
+                    <p id="current-price" class="text-4xl font-extrabold text-gray-200 mt-1">$0.00</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm font-medium text-gray-400">Thay đổi 24h</p>
+                    <p id="price-change" class="text-2xl font-bold mt-1 text-red-500">0.00%</p>
+                </div>
+                <div class="w-full mt-4 sm:w-auto sm:mt-0">
+                    <p class="text-sm font-medium text-gray-400">Vốn hóa thị trường</p>
+                    <p id="market-cap" class="text-2xl font-bold text-gray-300 mt-1">$0.00B</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Biểu Đồ Giá -->
+        <div class="bg-gray-800 rounded-xl shadow-2xl p-6 sm:p-8 border border-gray-700" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-xl font-semibold text-gray-200 mb-4">Biểu đồ Giá 7 Ngày</h3>
+            <div class="min-h-0 h-64 sm:h-96 relative">
+                <div id="chart-loading" class="absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
+                    <p class="text-gray-400">Đang tải biểu đồ...</p>
+                </div>
+                <canvas id="priceChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Các tính năng nổi bật -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="400">
+            <!-- Tính năng 1: Tốc độ -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
+                <div class="text-indigo-400 mb-3">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h4 class="text-xl font-bold text-gray-200 mb-2">Tốc Độ Vượt Trội</h4>
+                <p class="text-gray-400">Xử lý hàng ngàn giao dịch mỗi giây với phí cực thấp, lý tưởng cho DeFi.</p>
+            </div>
+
+            <!-- Tính năng 2: Bảo mật -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
+                <div class="text-indigo-400 mb-3">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.01 12.01 0 002 15.467v2.373a2 2 0 002 2h16a2 2 0 002-2v-2.373a12.01 12.01 0 00-1.618-8.424z"></path></svg>
+                </div>
+                <h4 class="text-xl font-bold text-gray-200 mb-2">Bảo Mật Cấp Doanh Nghiệp</h4>
+                <p class="text-gray-400">Sử dụng cơ chế đồng thuận tiên tiến nhất, đảm bảo tính toàn vẹn và chống lại các cuộc tấn công.</p>
+            </div>
+
+            <!-- Tính năng 3: Cộng đồng -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
+                <div class="text-indigo-400 mb-3">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20v-2m0 2h-2m-2.237-7.72A17.957 17.957 0 0112 11.238l-1.393 2.158a1 1 0 00.129 1.157l1.393 2.158A17.957 17.957 0 0112 11.238l-1.393 2.158a1 1 0 00.129 1.157l1.393 2.158M9 11h.01M15 11h.01M7 4h10a2 2 0 012 2v2a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2z"></path></svg>
+                </div>
+                <h4 class="text-xl font-bold text-gray-200 mb-2">Quản Trị Cộng Đồng</h4>
+                <p class="text-gray-400">Mô hình DAO cho phép cộng đồng nắm quyền kiểm soát và quyết định tương lai của dự án.</p>
+            </div>
+        </div>
+
+        <!-- Phần Sản Phẩm -->
+        <section id="san-pham" class="pt-24 pb-16" data-aos="fade-up" data-aos-delay="500">
+            <h2 class="text-4xl font-extrabold text-gray-200 text-center mb-12">Hệ Sinh Thái & Sản Phẩm Cốt Lõi</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Sản phẩm 1: TDTSwap DEX -->
+                <div class="bg-gray-800 rounded-xl shadow-2xl p-8 border-t-4 border-indigo-400">
+                    <div class="text-indigo-400 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m16 0l-4-4m4 4l-4 4"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-200 mb-3">TDTSwap (Sàn Giao Dịch Phi Tập Trung)</h3>
+                    <p class="text-gray-400 mb-4">
+                        TDTSwap là trung tâm trao đổi tài sản của hệ sinh thái TDTCoin. Cung cấp tính thanh khoản sâu, phí giao dịch cực thấp và giao diện thân thiện cho người dùng mới và chuyên nghiệp.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-400">
+                        <li>Hoán đổi token nhanh chóng và an toàn.</li>
+                        <li>Cung cấp thanh khoản (Liquidity Mining) với APY hấp dẫn.</li>
+                        <li>Giao dịch không cần KYC.</li>
+                    </ul>
+                </div>
+                <!-- Sản phẩm 2: TDTVault Staking -->
+                <div class="bg-gray-800 rounded-xl shadow-2xl p-8 border-t-4 border-indigo-400">
+                    <div class="text-indigo-400 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2-3 .895-3 2 1.343 2 3 2m0-8c1.11 0 2.08.402 2.592 1L12 10.424 9.408 9.002C9.92 8.402 10.89 8 12 8zm0 0l-1.395 7.625M12 12l-1.395 7.625M12 12l1.395 7.625M12 12l1.395 7.625M12 12l-1.395 7.625M12 12l-1.395 7.625M12 12l1.395 7.625M12 12l1.395 7.625"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-200 mb-3">TDTVault (Nền Tảng Staking & Yield)</h3>
+                    <p class="text-gray-400 mb-4">
+                        Kiếm thu nhập thụ động an toàn và ổn định bằng cách khóa token TDT của bạn. TDTVault tự động tối ưu hóa lợi nhuận cho người dùng.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-400">
+                        <li>Tùy chọn Staking linh hoạt và cố định.</li>
+                        <li>APY được tính toán minh bạch trên blockchain.</li>
+                        <li>Bảo hiểm rủi ro thông qua quỹ dự phòng.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phần Tokenomics -->
+        <section id="tokenomics" class="pt-24 pb-16" data-aos="fade-up" data-aos-delay="600">
+            <h2 class="text-4xl font-extrabold text-gray-200 text-center mb-12">Tokenomics Của TDTCoin</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Thông tin Tokenomics -->
+                <div class="bg-gray-800 rounded-xl shadow-2xl p-8 border-t-4 border-indigo-400">
+                    <div class="text-indigo-400 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2-3 .895-3 2 1.343 2 3 2m0-8c1.11 0 2.08.402 2.592 1L12 10.424 9.408 9.002C9.92 8.402 10.89 8 12 8zm0 0l-1.395 7.625M12 12l-1.395 7.625M12 12l1.395 7.625M12 12l1.395 7.625M12 12l-1.395 7.625M12 12l-1.395 7.625M12 12l1.395 7.625M12 12l1.395 7.625"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-200 mb-3">Phân Bổ Token TDT</h3>
+                    <p class="text-gray-400 mb-4">
+                        Token TDT được thiết kế để hỗ trợ hệ sinh thái DeFi và Web3 với tổng cung cố định là 1 tỷ token. Phân bổ được tối ưu hóa để đảm bảo tính bền vững, khuyến khích cộng đồng và phát triển dài hạn.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-400">
+                        <li>40% - Phát triển hệ sinh thái (Ecosystem Development)</li>
+                        <li>25% - Thanh khoản và Staking (Liquidity & Staking)</li>
+                        <li>20% - Đội ngũ & Cố vấn (Team & Advisors)</li>
+                        <li>10% - IDO & Bán công khai (Public Sale)</li>
+                        <li>5% - Quỹ cộng đồng & Airdrop (Community & Airdrop)</li>
+                    </ul>
+                    <p class="text-gray-400 mt-4">
+                        Cơ chế đốt token (burn) sẽ được áp dụng để giảm tổng cung theo thời gian, tăng giá trị dài hạn cho TDT.
+                    </p>
+                </div>
+                <!-- Biểu đồ Phân bổ Token -->
+                <div class="bg-gray-800 rounded-xl shadow-2xl p-8 border-t-4 border-indigo-400">
+                    <h3 class="text-2xl font-bold text-gray-200 mb-4">Biểu Đồ Phân Bổ</h3>
+                    <div class="min-h-0 h-64 sm:h-80 relative">
+                        <div id="tokenomics-chart-loading" class="absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
+                            <p class="text-gray-400">Đang tải biểu đồ...</p>
+                        </div>
+                        <canvas id="tokenomicsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phần Lộ Trình (Roadmap) -->
+        <section id="roadmap" class="pt-24 pb-16" data-aos="fade-up" data-aos-delay="700">
+            <h2 class="text-4xl font-extrabold text-gray-200 text-center mb-12">Lộ Trình Phát Triển (Roadmap)</h2>
+            <div class="space-y-12 relative before:content-[''] before:absolute before:top-0 before:left-8 before:h-full before:w-1 before:bg-indigo-700 before:rounded-full lg:before:left-1/2 lg:before:-translate-x-1/2">
+                <!-- Quý 3 2025 -->
+                <div class="relative flex lg:justify-start lg:odd:flex-row-reverse">
+                    <div class="hidden lg:block lg:w-1/2"></div>
+                    <div class="lg:w-1/2 p-4 lg:p-0">
+                        <div class="bg-indigo-400 w-5 h-5 rounded-full absolute top-1 left-7 lg:left-1/2 lg:-translate-x-1/2 border-4 border-gray-800 z-10"></div>
+                        <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 ml-8 lg:ml-0 lg:odd:mr-8 lg:even:ml-8 text-left">
+                            <span class="text-sm font-semibold text-indigo-400 block mb-1">Q3 2025 - Khởi động (Launch)</span>
+                            <h4 class="text-xl font-bold text-gray-200 mb-2">Mainnet V1 & IDO</h4>
+                            <ul class="list-disc list-inside text-gray-400">
+                                <li>Phát hành Mainnet chính thức V1.</li>
+                                <li>Initial DEX Offering (IDO) trên TDTSwap.</li>
+                                <li>Kiểm toán hợp đồng thông minh bởi CertiK.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quý 4 2025 -->
+                <div class="relative flex lg:justify-start lg:odd:flex-row-reverse">
+                    <div class="hidden lg:block lg:w-1/2"></div>
+                    <div class="lg:w-1/2 p-4 lg:p-0">
+                        <div class="bg-indigo-400 w-5 h-5 rounded-full absolute top-1 left-7 lg:left-1/2 lg:-translate-x-1/2 border-4 border-gray-800 z-10"></div>
+                        <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 ml-8 lg:ml-0 lg:odd:mr-8 lg:even:ml-8 text-left">
+                            <span class="text-sm font-semibold text-indigo-400 block mb-1">Q4 2025 - Tăng trưởng</span>
+                            <h4 class="text-xl font-bold text-gray-200 mb-2">Tích hợp NFT & Oracle</h4>
+                            <ul class="list-disc list-inside text-gray-400">
+                                <li>Ra mắt TDT NFT Marketplace.</li>
+                                <li>Tích hợp nguồn dữ liệu giá Oracle phi tập trung.</li>
+                                <li>Mở rộng thêm pool thanh khoản.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quý 1 2026 -->
+                <div class="relative flex lg:justify-start lg:odd:flex-row-reverse">
+                    <div class="hidden lg:block lg:w-1/2"></div>
+                    <div class="lg:w-1/2 p-4 lg:p-0">
+                        <div class="bg-indigo-400 w-5 h-5 rounded-full absolute top-1 left-7 lg:left-1/2 lg:-translate-x-1/2 border-4 border-gray-800 z-10"></div>
+                        <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 ml-8 lg:ml-0 lg:odd:mr-8 lg:even:ml-8 text-left">
+                            <span class="text-sm font-semibold text-indigo-400 block mb-1">Q1 2026 - Hoàn thiện</span>
+                            <h4 class="text-xl font-bold text-gray-200 mb-2">Quản trị DAO & Cầu nối</h4>
+                            <ul class="list-disc list-inside text-gray-400">
+                                <li>Triển khai Quản trị DAO hoàn chỉnh (bỏ phiếu).</li>
+                                <li>Ra mắt Cross-Chain Bridge V1 (ETH, BSC).</li>
+                                <li>Hỗ trợ Ví cứng Ledger/Trezor.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phần Đội Ngũ -->
+        <section id="doi-ngu" class="pt-24 pb-16 bg-gray-800 rounded-xl shadow-2xl" data-aos="fade-up" data-aos-delay="800">
+            <h2 class="text-4xl font-extrabold text-gray-200 text-center mb-12">Gặp Gỡ Đội Ngũ Sáng Lập</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                <!-- Thành viên 1 -->
+                <div class="flex flex-col items-center text-center p-4">
+                    <img src="images/avatars/lucianmincu.jpg" alt="Avatar của Cẩm Lê" class="w-24 h-24 rounded-full mb-4 object-cover">
+                    <h4 class="text-lg font-bold text-gray-200 team-link">
+                        <a href="https://x.com/lucianmincu" target="_blank" rel="noopener noreferrer">Lucian Mincu</a>
+                    </h4>
+                    <p class="text-indigo-400 text-sm mb-2">CEO & Chiến lược</p>
+                    <p class="text-gray-400 text-sm">Chuyên gia Blockchain với 10 năm kinh nghiệm trong lĩnh vực DAO & DeFi</p>
+                </div>
+                <!-- Thành viên 2 -->
+                <div class="flex flex-col items-center text-center p-4">
+                    <img src="images/avatars/AlexKarys.jpg" alt="Avatar của Đức Thiên" class="w-24 h-24 rounded-full mb-4 object-cover">
+                    <h4 class="text-lg font-bold text-gray-200 team-link">
+                        <a href="https://x.com/ack_129" target="_blank" rel="noopener noreferrer">Alex Karys</a>
+                    </h4>
+                    <p class="text-indigo-400 text-sm mb-2">Trưởng phòng Kỹ thuật (CTO)</p>
+                    <p class="text-gray-400 text-sm">Kiến trúc sư phần mềm, dẫn dắt việc phát triển hợp đồng thông minh.</p>
+                </div>
+                <!-- Thành viên 3 -->
+                <div class="flex flex-col items-center text-center p-4">
+                    <img src="images/avatars/MatthΞw Graham.jpg" alt="Avatar của Alex Nguyen" class="w-24 h-24 rounded-full mb-4 object-cover">
+                    <h4 class="text-lg font-bold text-gray-200 team-link">
+                        <a href="https://x.com/Matthew_Graham_" target="_blank" rel="noopener noreferrer">MatthΞw Graham</a>
+                    </h4>
+                    <p class="text-indigo-400 text-sm mb-2">Giám đốc Marketing (CMO)</p>
+                    <p class="text-gray-400 text-sm">Chịu trách nhiệm xây dựng thương hiệu và phát triển cộng đồng toàn cầu.</p>
+                </div>
+                <!-- Thành viên 4 -->
+                <div class="flex flex-col items-center text-center p-4">
+                    <img src="images/avatars/duc-thien.jpg" alt="Avatar của Dũng Phạm" class="w-24 h-24 rounded-full mb-4 object-cover">
+                    <h4 class="text-lg font-bold text-gray-200 team-link">
+                        <a href="https://x.com/DucThien0108" target="_blank" rel="noopener noreferrer">Duc Thien</a>
+                    </h4>
+                    <p class="text-indigo-400 text-sm mb-2">Trưởng phòng Sản phẩm</p>
+                    <p class="text-gray-400 text-sm">Đảm bảo các sản phẩm DeFi luôn đổi mới và thân thiện với người dùng.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phần Đối Tác -->
+        <section id="doi-tac" class="pt-24 pb-16" data-aos="fade-up" data-aos-delay="900">
+            <h2 class="text-4xl font-extrabold text-gray-200 text-center mb-12">Đối Tác Chiến Lược</h2>
+            <p class="text-lg text-gray-400 text-center mb-12 max-w-3xl mx-auto">TDTCoin hợp tác với các nền tảng hàng đầu trong lĩnh vực DeFi và blockchain để mang đến hệ sinh thái mạnh mẽ, an toàn và mở rộng. Các đối tác của chúng tôi hỗ trợ tích hợp thanh khoản, oracle dữ liệu và kiểm toán bảo mật.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Đối tác 1: Uniswap -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center">
+                    <img src="images/partners/uniswap.png" alt="Logo Uniswap" class="w-16 h-16 mx-auto mb-4 object-contain">
+                    <h4 class="text-xl font-bold text-gray-200 partner-link">
+                        <a href="https://x.com/Uniswap" target="_blank" rel="noopener noreferrer">Uniswap</a>
+                    </h4>
+                    <p class="text-gray-400">Nền tảng DEX hàng đầu cho hoán đổi token, hỗ trợ thanh khoản sâu cho TDTSwap.</p>
+                </div>
+                <!-- Đối tác 2: Aave -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center">
+                    <img src="images/partners/aave.png" alt="Logo Aave" class="w-16 h-16 mx-auto mb-4 object-contain">
+                    <h4 class="text-xl font-bold text-gray-200 partner-link">
+                        <a href="https://x.com/aave" target="_blank" rel="noopener noreferrer">Aave</a>
+                    </h4>
+                    <p class="text-gray-400">Giao thức lending DeFi, hợp tác để tối ưu hóa staking và yield farming trong TDTVault.</p>
+                </div>
+                <!-- Đối tác 3: Chainlink -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center">
+                    <img src="images/partners/chainlink.png" alt="Logo Chainlink" class="w-16 h-16 mx-auto mb-4 object-contain">
+                    <h4 class="text-xl font-bold text-gray-200 partner-link">
+                        <a href="https://x.com/chainlink" target="_blank" rel="noopener noreferrer">Chainlink</a>
+                    </h4>
+                    <p class="text-gray-400">Cung cấp oracle dữ liệu đáng tin cậy cho giá token và giao dịch cross-chain.</p>
+                </div>
+                <!-- Đối tác 4: CertiK -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 text-center">
+                    <img src="images/partners/certik.png" alt="Logo CertiK" class="w-16 h-16 mx-auto mb-4 object-contain">
+                    <h4 class="text-xl font-bold text-gray-200 partner-link">
+                        <a href="https://x.com/CertiK" target="_blank" rel="noopener noreferrer">CertiK</a>
+                    </h4>
+                    <p class="text-gray-400">Dịch vụ kiểm toán bảo mật hợp đồng thông minh, đảm bảo an toàn cho toàn hệ sinh thái.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phần Liên Hệ/Newsletter -->
+        <section id="lien-he" class="pt-24 pb-16" data-aos="fade-up" data-aos-delay="1000">
+            <div class="bg-gray-800 rounded-xl shadow-2xl p-8 sm:p-12 text-center">
+                <h2 class="text-3xl font-extrabold text-white mb-4">Tham Gia Cộng Đồng TDTCoin</h2>
+                <p class="text-indigo-200 text-lg mb-8">Đăng ký nhận bản tin của chúng tôi để không bỏ lỡ các thông báo quan trọng và cập nhật lộ trình.</p>
+                <form id="newsletter-form" class="max-w-md mx-auto" onsubmit="handleFormSubmit(event)">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Nhập email của bạn..." required class="flex-grow p-3 rounded-full border-0 focus:ring-2 focus:ring-white text-gray-800 shadow-inner">
+                        <button type="submit" class="bg-white text-indigo-600 font-bold py-3 px-6 rounded-full hover:bg-indigo-50 transition duration-300 shadow-lg sm:w-auto">
+                            Đăng Ký Ngay
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-gray-800 mt-12">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-gray-400">
+                <div class="text-center md:text-left">
+                    <p>&copy; 2025 TDTCoin. Bảo lưu mọi quyền.</p>
+                    <p class="mt-2 text-sm">Cảnh báo rủi ro: Đầu tư vào tiền điện tử có rủi ro cao. Hãy tự nghiên cứu kỹ lưỡng.</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex space-x-4">
+                    <a href="https://discord.com" target="_blank" class="social-icon text-gray-400 hover:text-indigo-400">
+                        <i class="fab fa-discord fa-lg"></i>
+                    </a>
+                    <a href="https://x.com" target="_blank" class="social-icon text-gray-400 hover:text-indigo-400">
+                        <i class="fab fa-x-twitter fa-lg"></i>
+                    </a>
+                    <a href="https://telegram.org" target="_blank" class="social-icon text-gray-400 hover:text-indigo-400">
+                        <i class="fab fa-telegram-plane fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init();
+
+            // Hàm làm tròn số và định dạng tiền tệ
+            const formatCurrency = (value) => {
+                return new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 4
+                }).format(value);
+            };
+
+            // Hàm định dạng vốn hóa thị trường
+            const formatMarketCap = (value) => {
+                if (value >= 1e9) {
+                    return (value / 1e9).toFixed(2) + 'B';
+                }
+                return (value / 1e6).toFixed(2) + 'M';
+            };
+
+            // Dữ liệu mô phỏng (7 ngày)
+            const basePrice = 4.75;
+            const priceData = [
+                basePrice * 0.98,
+                basePrice * 1.05,
+                basePrice * 1.12,
+                basePrice * 1.09,
+                basePrice,
+                basePrice * 1.15,
+                basePrice * 1.25
+            ];
+
+            const dates = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
+            const currentPrice = priceData[priceData.length - 1];
+            const yesterdayPrice = priceData[priceData.length - 2];
+            const change24h = (currentPrice - yesterdayPrice) / yesterdayPrice * 100;
+
+            // Vốn hóa thị trường mô phỏng
+            const marketCapValue = 300_000_000;
+
+            // Cập nhật các thẻ dữ liệu
+            document.getElementById('current-price').textContent = formatCurrency(currentPrice);
+            document.getElementById('market-cap').textContent = '$' + formatMarketCap(marketCapValue);
+
+            const priceChangeElement = document.getElementById('price-change');
+            priceChangeElement.textContent = `${change24h.toFixed(2)}%`;
+
+            if (change24h >= 0) {
+                priceChangeElement.classList.remove('text-red-500');
+                priceChangeElement.classList.add('text-green-500');
+                priceChangeElement.innerHTML = `+${priceChangeElement.textContent} <span class="text-xl align-top">▲</span>`;
+            } else {
+                priceChangeElement.classList.remove('text-green-500');
+                priceChangeElement.classList.add('text-red-500');
+                priceChangeElement.innerHTML = `${priceChangeElement.textContent} <span class="text-xl align-top">▼</span>`;
+            }
+
+            // Khởi tạo Biểu đồ Giá
+            const ctx = document.getElementById('priceChart').getContext('2d');
+            const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--tw-colors-indigo-600') || '#4f46e5';
+            const priceChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Giá (USD)',
+                        data: priceData,
+                        borderColor: primaryColor,
+                        backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                        borderWidth: 2,
+                        pointRadius: 3,
+                        tension: 0.4,
+                        fill: true,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += formatCurrency(context.parsed.y);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.05)',
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return formatCurrency(value);
+                                },
+                                color: '#e5e7eb'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: '#e5e7eb'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Ẩn trạng thái loading của biểu đồ giá
+            document.getElementById('chart-loading').style.display = 'none';
+
+            // Khởi tạo Biểu đồ Tokenomics
+            const tokenomicsCtx = document.getElementById('tokenomicsChart').getContext('2d');
+            const tokenomicsChart = new Chart(tokenomicsCtx, {
+                type: 'pie',
+                data: {
+                    labels: [
+                        'Phát triển hệ sinh thái',
+                        'Thanh khoản & Staking',
+                        'Đội ngũ & Cố vấn',
+                        'IDO & Bán công khai',
+                        'Quỹ cộng đồng & Airdrop'
+                    ],
+                    datasets: [{
+                        data: [40, 25, 20, 10, 5],
+                        backgroundColor: [
+                            '#4f46e5', // Indigo-600
+                            '#7e22ce', // Purple-700
+                            '#3b82f6', // Blue-500
+                            '#10b981', // Green-500
+                            '#f59e0b'  // Yellow-500
+                        ],
+                        borderColor: '#1f2937', // Gray-800
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#e5e7eb',
+                                font: {
+                                    size: 14,
+                                    family: 'Inter',
+                                    weight: '500'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += `${context.parsed}%`;
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Ẩn trạng thái loading của biểu đồ Tokenomics
+            document.getElementById('tokenomics-chart-loading').style.display = 'none';
+
+            // Cập nhật kích thước biểu đồ khi resize
+            window.addEventListener('resize', () => {
+                priceChart.resize();
+                tokenomicsChart.resize();
+            });
+
+            // Logic Menu Mobile
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Đóng menu khi nhấp vào liên kết
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Xử lý submit form liên hệ
+            window.handleFormSubmit = function(event) {
+                event.preventDefault();
+                const emailInput = event.target.querySelector('input[type="email"]');
+                alert(`Cảm ơn bạn đã đăng ký với email: ${emailInput.value}`);
+                emailInput.value = '';
+            };
+
+            // Hàm cuộn đến section
+            window.scrollToSection = function(sectionId) {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+        });
+    </script>
+</body>
+</html>
